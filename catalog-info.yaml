@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: i034lynel-nodejs-gitops
+  description: This is GitOps manifest for i034lynel-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: i034lynel-nodejs
+    janus-idp.io/tekton: i034lynel-nodejs
+    backstage.io/kubernetes-id: i034lynel-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:i034lynel-nodejs
